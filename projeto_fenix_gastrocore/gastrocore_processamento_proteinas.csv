@@ -1,0 +1,19 @@
+data_processamento,unidade_codigo,turno,tipo_proteina,nome_proteina,peso_bruto_kg,peso_pos_descong_kg,apara_kg,rejeito_kg,peso_limpo_kg,perda_total_kg,perda_pct,fator_correcao_real,limite_perda_pct,status_perda
+2026-11-02,IND-01,almoco,AVES,File de Frango Congelado,40.00,36.80,3.20,1.60,32.00,8.00,20.00,1.25,25.00,DENTRO_DA_META
+2026-11-02,IND-01,almoco,BOVINA,Acem Bovino Congelado,50.00,46.50,8.50,4.00,34.00,16.00,32.00,1.47,30.00,ACIMA_DO_LIMITE
+2026-11-03,HOSP-02,almoco,AVES,Coxa com Sobrecoxa,35.00,32.50,2.80,3.10,26.60,8.40,24.00,1.32,26.00,DENTRO_DA_META
+2026-11-03,ESC-03,almoco,BOVINA,Carne Moida Congelada,30.00,27.90,0.40,0.50,27.00,3.00,10.00,1.11,15.00,DENTRO_DA_META
+2026-11-04,IND-01,almoco,BOVINA,Coxao Mole Resfriado,45.00,45.00,5.20,1.80,38.00,7.00,15.56,1.18,18.00,DENTRO_DA_META
+2026-11-04,IND-01,jantar,SUINA,Bisteca Suina Congelada,28.00,25.80,2.90,2.10,20.80,7.20,25.71,1.35,25.00,ACIMA_DO_LIMITE
+2026-11-05,HOSP-02,almoco,PESCADOS,File de Peixe Congelado,24.00,19.20,0.60,0.40,18.20,5.80,24.17,1.32,22.00,ACIMA_DO_LIMITE
+2026-11-05,ESC-03,almoco,AVES,File de Frango Congelado,40.00,34.00,4.80,3.20,26.00,14.00,35.00,1.54,25.00,CRITICO_DESCONGELAMENTO
+2026-11-06,IND-01,almoco,BOVINA,Costela Bovina Serrada,60.00,56.00,7.50,11.50,37.00,23.00,38.33,1.62,35.00,ACIMA_DO_LIMITE
+2026-11-06,HOSP-02,ceia,AVES,Asinha de Frango Congelada,18.00,16.90,0.50,0.70,15.70,2.30,12.78,1.15,15.00,DENTRO_DA_META
+2026-11-09,IND-01,almoco,BOVINA,Bife do Vazio Congelado,42.00,39.20,5.80,1.90,31.50,10.50,25.00,1.33,24.00,ACIMA_DO_LIMITE
+2026-11-09,ESC-03,almoco,EMBUTIDOS,Calabresa Defumada,20.00,20.00,0.60,0.20,19.20,0.80,4.00,1.04,5.00,DENTRO_DA_META
+2026-11-10,HOSP-02,almoco,BOVINA,Alcatra Bovina Resfriada,32.00,32.00,3.80,1.00,27.20,4.80,15.00,1.18,16.00,DENTRO_DA_META
+2026-11-10,IND-01,ceia,MIUDOS,Figado Bovino Resfriado,22.00,22.00,3.10,1.50,17.40,4.60,20.91,1.26,20.00,ACIMA_DO_LIMITE
+2026-11-11,ESC-03,almoco,AVES,File de Frango Congelado,38.00,35.30,2.50,1.20,31.60,6.40,16.84,1.20,25.00,DENTRO_DA_META
+2026-11-12,IND-01,almoco,BOVINA,Charque Dianteira,25.00,25.00,3.90,1.60,19.50,5.50,22.00,1.28,22.00,DENTRO_DA_META
+2026-11-13,HOSP-02,almoco,SUINA,Costela Suina Congelada,30.00,27.60,2.80,4.20,20.60,9.40,31.33,1.46,28.00,ACIMA_DO_LIMITE
+2026-11-14,IND-01,almoco,EMBUTIDOS,Bacon Defumado em Manta,15.00,15.00,1.10,0.40,13.50,1.50,10.00,1.11,10.00,DENTRO_DA_META

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GastroCore ERP • Esquema Operacional v0.3.0 (13 Tabelas) & Datasets Analíticos",
+  "version": "2.0.0",
+  "description": "Especificação unificada do banco PostgreSQL/Supabase (13 tabelas operacionais) e dos CSVs sintéticos de partida para o Projeto Integrador APONTI / CESIC Tecnologias.",
+  "empresa_mantenedora": "CESIC Tecnologias",
+  "contato_oficial": "admcesic@gmail.com",
+  "cliente_piloto": "Bondegusto Alimentação & Serviços Ltda",
+  "ambientes": {
+    "homologacao_hml": "https://hml.gastrocore.cesic.com.br",
+    "producao_prd": "https://gastrocore.cesic.com.br",
+    "portal_aponti": "https://www.cesic.com.br/portal-aponti",
+    "schema_sql": "/aponti/data/schema.sql?download=1"
+  },
+  "camada_operacional_v030": {
+    "engine": "PostgreSQL 16 (Supabase PostgREST /rest/v1/*)",
+    "total_tabelas": 13,
+    "unidades_seed": [
+      {"id": "unit-industrial", "code": "IND-01", "name": "Fábrica Alpha", "type": "industrial", "pax_dia": 550, "preco_pax": 14.50},
+      {"id": "unit-hospitalar", "code": "HOSP-02", "name": "Hospital São Lucas", "type": "hospitalar", "pax_dia": 320, "preco_pax": 18.90},
+      {"id": "unit-escolar", "code": "ESC-03", "name": "Colégio Monteiro Lobato", "type": "escolar", "pax_dia": 420, "preco_pax": 12.80}
+    ],
+    "tabelas": [
+      {
+        "nome": "kitchen_units",
+        "grupo": "Core Multi-Unidades",
+        "pk": "id (TEXT)",
+        "colunas_chave": ["id", "name", "code", "type (industrial|hospitalar|escolar)", "address", "manager_name", "contact_email", "average_pax_per_day", "contract_price_per_pax", "status (ativa|manutencao|inativa)", "created_at"]
+      },
+      {
+        "nome": "ingredients",
+        "grupo": "Suprimentos & PVPS",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "unit_id", "name", "item_type (alimento|descartavel|higiene|utensilio|equipamento)", "category", "unit (kg|g|l|L|ml|un|cx|pct|rolo)", "current_stock", "min_stock", "unit_cost", "supplier", "brand", "lot_number", "expiration_date", "status (normal|baixo|vencendo|vencido)", "allergens (TEXT[])", "batches (JSONB)", "updated_at"]
+      },
+      {
+        "nome": "technical_sheets",
+        "grupo": "Engenharia de Receitas",
+        "pk": "id (TEXT)",
+        "colunas_chave": ["id", "title", "category (principal|guarnicao|salada|sobremesa|bebida|molho|lanche)", "yield_portions", "portion_size_grams", "preparation_time_min", "cooking_factor", "ingredients (JSONB)", "total_cost", "cost_per_portion", "suggested_selling_price", "margin_percent", "allergens_summary (TEXT[])", "dietary_tags (TEXT[])"]
+      },
+      {
+        "nome": "daily_menu_plans",
+        "grupo": "Planejamento de Cardápio",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "unit_id", "date_str", "day_of_week", "shift", "planned_pax", "price_per_pax_contracted", "principais_ids (TEXT[])", "guarnicoes_ids (TEXT[])", "bases_ids (TEXT[])", "saladas_ids (TEXT[])", "molhos_ids (TEXT[])", "sobremesas_ids (TEXT[])", "bebidas_ids (TEXT[])", "dietas_ids (TEXT[])", "notes"]
+      },
+      {
+        "nome": "waste_records",
+        "grupo": "Balança RDC 216",
+        "pk": "id (TEXT)",
+        "colunas_chave": ["id", "unit_id", "timestamp", "period", "operation_type", "unit_name", "category (pre_preparo|sobra_limpa|resto_ingesto)", "item_or_recipe_name", "weight_kg", "estimated_cost_per_kg", "total_loss_brl", "reason", "reported_by", "action_taken", "created_at"]
+      },
+      {
+        "nome": "hot_box_deliveries",
+        "grupo": "Logística Térmica",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "unit_id", "client_name", "vehicle_plate", "driver_name", "departure_time", "arrival_time_estimated", "dispatch_temp_celsius", "arrival_temp_celsius", "status (em_preparo|em_transito|entregue|nao_conforme)", "boxes_count", "seal_number", "pax_count"]
+      },
+      {
+        "nome": "proposal_quotes",
+        "grupo": "Comercial & Eventos",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "unit_id", "client_name", "event_type (coffee_break|almoco_corporativo|coquetel|contrato_mensal)", "event_date", "pax", "raw_food_cost", "disposables_cost", "staff_cost", "logistics_cost", "target_margin_percent", "final_price_per_pax", "total_proposal_value", "status (rascunho|enviada|aprovada|recusada)", "items_included (TEXT[])"]
+      },
+      {
+        "nome": "tenant_configs",
+        "grupo": "Governança White-Label",
+        "pk": "id (TEXT)",
+        "colunas_chave": ["id", "company_name", "trading_name", "cnpj", "primary_color", "active_plan", "enabled_modules (JSONB)", "updated_at"]
+      },
+      {
+        "nome": "app_users",
+        "grupo": "RBAC & PIN Chão de Fábrica",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "email", "full_name", "role (admin|gerente|nutricionista|cozinheiro|estoquista|financeiro|atendente)", "unit_id", "pin (4 dígitos KDS)", "created_at", "updated_at"]
+      },
+      {
+        "nome": "temperature_logs",
+        "grupo": "Termometria RDC 216",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "unit_id", "equipment", "equipment_type (quente|frio)", "temperature", "is_compliant", "time_str", "shift", "recorded_at"]
+      },
+      {
+        "nome": "stock_movements",
+        "grupo": "Kardex Auditável",
+        "pk": "id (TEXT)",
+        "colunas_chave": ["id", "ingredient_id", "ingredient_name", "batch_id", "lot_number", "brand", "type (entrada|saida|perda|ajuste)", "quantity", "unit", "unit_cost", "total_cost", "previous_stock", "new_stock", "reason", "document_number", "timestamp", "user_name"]
+      },
+      {
+        "nome": "kds_dish_status",
+        "grupo": "KDS Chão de Fábrica",
+        "pk": "id (TEXT)",
+        "fk": ["unit_id -> kitchen_units.id"],
+        "colunas_chave": ["id", "unit_id", "date_str", "shift", "recipe_id", "status (a_iniciar|preparando|pronto)", "started_at", "completed_at", "updated_at"]
+      },
+      {
+        "nome": "system_heartbeat",
+        "grupo": "SRE Keep-Alive",
+        "pk": "id (TEXT)",
+        "colunas_chave": ["id", "environment", "last_ping_at", "source"]
+      }
+    ]
+  },
+  "datasets_sinteticos_csv": {
+    "observacao": "CSVs educacionais de partida para análise exploratória (EDA) e prototipação do Star Schema (camada Silver/Gold).",
+    "arquivos": [
+      {
+        "nome": "fato_desperdicio_rdc216",
+        "arquivo_csv": "/aponti/data/gastrocore_desperdicio_rdc216.csv",
+        "registros": 30,
+        "colunas": ["id_registro", "data_registro", "id_filial", "nome_filial", "turno", "tipo_descarte", "peso_kg", "custo_estimado_reais", "refeicoes_produzidas_pax", "resto_ingesta_por_pax_gramas", "temp_afericao_celsius", "status_sanitario", "motivo_declarado"]
+      },
+      {
+        "nome": "fato_consumo_cmv",
+        "arquivo_csv": "/aponti/data/gastrocore_consumo_cmv.csv",
+        "registros": 20,
+        "colunas": ["id_consumo", "data_competencia", "id_filial", "nome_filial", "categoria_insumo", "nome_insumo", "qtd_prevista_kg", "qtd_real_kg", "custo_unitario_kg", "cmv_orcado_reais", "cmv_realizado_reais", "desvio_cmv_reais", "desvio_cmv_percentual", "classificacao_abc", "fator_correcao_teorico", "fator_correcao_real", "motivo_desvio"]
+      },
+      {
+        "nome": "dim_filiais",
+        "arquivo_csv": "/aponti/data/gastrocore_filiais_pe.csv",
+        "registros": 5,
+        "colunas": ["id_filial", "codigo_unidade", "nome_unidade", "regiao", "cidade", "uf", "tipo_operacao", "capacidade_refeicoes_dia", "meta_cmv_percentual", "responsavel_tecnica", "status_operacional"]
+      }
+    ]
+  },
+  "kpis_principais": [
+    {
+      "sigla": "CMV_%",
+      "nome": "Custo de Mercadoria Vendida Percentual",
+      "formula": "(Custo_Total_Insumos / Faturamento_Bruto) * 100",
+      "meta_padrao": "<= 32.0% (Saudável) | 32.1-36% (Atenção) | > 36% (Crítico)"
+    },
+    {
+      "sigla": "MARGEM_%",
+      "nome": "Semáforo de Margem Bruta (Regra 3 Segundos)",
+      "formula": "((Faturamento - Custo) / Faturamento) * 100",
+      "meta_padrao": "> 55% Verde | 30-55% Âmbar | < 30% Vermelho"
+    },
+    {
+      "sigla": "RESTO_INGESTA_PAX",
+      "nome": "Resto-Ingesta Médio por Comensal",
+      "formula": "Peso_Resto_Pratos_g / Total_Refeicoes_Servidas_PAX",
+      "meta_padrao": "<= 35.0 g/PAX"
+    },
+    {
+      "sigla": "IC_TERMICO",
+      "nome": "Conformidade Térmica ANVISA RDC 216 (Quente e Fria)",
+      "formula": "(Logs_Conformes / Total_Logs) * 100",
+      "meta_padrao": "Quente >= 60C (Hot Box >= 65C) | Fria <= 4C proteínas / <= 5C hortifrúti"
+    }
+  ]
+}

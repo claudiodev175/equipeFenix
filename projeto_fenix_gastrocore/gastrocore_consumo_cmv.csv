@@ -1,0 +1,21 @@
+id_consumo,data_competencia,id_filial,nome_filial,categoria_insumo,nome_insumo,qtd_prevista_kg,qtd_real_kg,custo_unitario_kg,cmv_orcado_reais,cmv_realizado_reais,desvio_cmv_reais,desvio_cmv_percentual,classificacao_abc,fator_correcao_teorico,fator_correcao_real,motivo_desvio
+1,2026-03-01,1,Cozinha Central Recife Antigo,Proteina Bovina,Acem Bovina em Cubos,340.0,378.5,34.50,11730.00,13058.25,1328.25,11.32,Curva A,1.25,1.39,Lote com teor de gordura e aponeurose superior a ficha
+2,2026-03-01,1,Cozinha Central Recife Antigo,Proteina Ave,Peito de Frango Sem Osso,420.0,432.0,19.80,8316.00,8553.60,237.60,2.86,Curva A,1.10,1.13,Variacao dentro da margem de tolerancia operacional
+3,2026-03-01,1,Cozinha Central Recife Antigo,Graos e Cereais,Arroz Parboilizado Tipo 1,180.0,185.0,6.20,1116.00,1147.00,31.00,2.78,Curva B,1.00,1.02,Rendimento estavel no cozimento a vapor
+4,2026-03-01,1,Cozinha Central Recife Antigo,Graos e Cereais,Feijao Carioca Selecionado,95.0,98.0,8.40,798.00,823.20,25.20,3.16,Curva B,1.00,1.03,Tempo de remolho adequado
+5,2026-03-01,1,Cozinha Central Recife Antigo,Hortifruti,Batata Inglesa Lisa,210.0,248.0,7.10,1491.00,1760.80,269.80,18.09,Curva B,1.20,1.41,Tubérculos de calibre irregular geraram perda no descasque
+6,2026-03-01,1,Cozinha Central Recife Antigo,Hortifruti,Tomate Longa Vida,85.0,96.0,8.90,756.50,854.40,97.90,12.94,Curva C,1.15,1.30,Maturacao avancada com necessidade de descarte parcial
+7,2026-03-01,2,Cozinha Satelite Complexo Suape,Proteina Bovina,Acem Bovina em Cubos,210.0,235.0,34.50,7245.00,8107.50,862.50,11.90,Curva A,1.25,1.40,Perda termica e rediluição em caldeira satelite
+8,2026-03-01,2,Cozinha Satelite Complexo Suape,Proteina Ave,Coxa e Sobrecoxa Desossada,280.0,295.0,16.50,4620.00,4867.50,247.50,5.36,Curva A,1.18,1.24,Descongelamento com perda de exsudato
+9,2026-03-01,3,Unidade Polo Caruaru,Proteina Caprina/Bovina,Carne de Sol de Primeira,190.0,196.0,42.00,7980.00,8232.00,252.00,3.16,Curva A,1.15,1.18,Fornecedor regional de Caruaru com excelente padrao
+10,2026-03-01,3,Unidade Polo Caruaru,Hortifruti,Mandioca Manteiga Macaxeira,160.0,174.0,5.80,928.00,1009.20,81.20,8.75,Curva B,1.30,1.41,Perda de casca mais espessa na safra local
+11,2026-03-01,4,Unidade Vale Petrolina,Proteina Peixe,File de Tilapia Fresco,180.0,192.0,38.00,6840.00,7296.00,456.00,6.67,Curva A,1.08,1.15,Produtor do Vale do Sao Francisco com bom frescor
+12,2026-03-01,4,Unidade Vale Petrolina,Hortifruti,Manga Tommy em Cubos (Salada),70.0,72.0,6.50,455.00,468.00,13.00,2.86,Curva C,1.35,1.38,Fruta regional do Vale com alto aproveitamento
+13,2026-03-02,1,Cozinha Central Recife Antigo,Proteina Suina,Lombo Suino Fatiado,310.0,324.0,24.00,7440.00,7776.00,336.00,4.52,Curva A,1.12,1.17,Corte padronizado com perda sob controle
+14,2026-03-02,1,Cozinha Central Recife Antigo,Proteina Bovina,Alcatra Fatiada p/ Bife,360.0,398.0,44.00,15840.00,17512.00,1672.00,10.56,Curva A,1.18,1.30,Espessura de corte manual acima da ficha tecnica
+15,2026-03-02,2,Cozinha Satelite Complexo Suape,Proteina Suina,Lombo Suino Fatiado,195.0,208.0,24.00,4680.00,4992.00,312.00,6.67,Curva A,1.12,1.19,Porcionamento com leve variacao de gramatura
+16,2026-03-03,1,Cozinha Central Recife Antigo,Hortifruti,Cenoura Tipo Extra,130.0,152.0,6.40,832.00,972.80,140.80,16.92,Curva B,1.18,1.38,Calibre fino gerou maior perda de casca em descascador
+17,2026-03-03,1,Cozinha Central Recife Antigo,Laticinios,Queijo Coalho em Cubos,90.0,91.5,41.00,3690.00,3751.50,61.50,1.67,Curva A,1.02,1.03,Insumo nobre fracionado sob supervisao direta de nutricionista
+18,2026-03-04,1,Cozinha Central Recife Antigo,Proteina Bovina,Carne Moida Patinho,290.0,305.0,36.00,10440.00,10980.00,540.00,5.17,Curva A,1.15,1.21,Umidade ligeiramente elevada na embalagem a vacuo
+19,2026-03-04,2,Cozinha Satelite Complexo Suape,Proteina Bovina,Carne Moida Patinho,175.0,188.0,36.00,6300.00,6768.00,468.00,7.43,Curva A,1.15,1.23,Aquecimento prolongado gerou reducao de volume
+20,2026-03-04,3,Unidade Polo Caruaru,Hortifruti,Abobora Jacarezinho,110.0,132.0,4.80,528.00,633.60,105.60,20.00,Curva C,1.35,1.62,Casca excessivamente rigida e sementes grandes
