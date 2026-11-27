@@ -1,12 +1,12 @@
 # Fenix GastroCore — Relatório de Qualidade Silver
 
-- Gerado em (UTC): 2026-11-27T13:12:47.575705+00:00
+- Gerado em (UTC): 2026-11-27T15:40:44.314266+00:00
 - Arquivos processados: 5/5
 - Arquivos ausentes: Nenhum
 
 ## Integridade da camada Bronze
 
-- Manifesto: `C:\Users\welli\Documents\APONT SOFTEX\projeto_fenix_gastrocore\Dados_projeto_fenix\data\quality_reports\manifesto_integridade_bronze.csv`
+- Manifesto: `manifesto_integridade_bronze.csv`
 - Método: SHA-256
 - Arquivos verificados: 5/5
 - Resultado: **APROVADO**

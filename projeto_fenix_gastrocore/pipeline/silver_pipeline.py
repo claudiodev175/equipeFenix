@@ -173,7 +173,7 @@ def validate_bronze_manifest(input_dir: Path, manifest_path: Path) -> dict:
         )
 
     return {
-        "manifesto": str(manifest_path.resolve()),
+        "manifesto": manifest_path.name,
         "metodo": "SHA-256",
         "arquivos_verificados": len(checked),
         "arquivos_integros": len(checked),
