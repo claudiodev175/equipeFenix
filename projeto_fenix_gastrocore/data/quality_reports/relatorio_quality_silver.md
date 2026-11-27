@@ -1,6 +1,6 @@
 # Fenix GastroCore — Relatório de Qualidade Silver
 
-- Gerado em (UTC): 2026-11-27T15:40:44.314266+00:00
+- Gerado em (UTC): 2026-11-27T20:47:24.164306+00:00
 - Arquivos processados: 5/5
 - Arquivos ausentes: Nenhum
 

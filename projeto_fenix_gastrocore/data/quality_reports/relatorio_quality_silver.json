@@ -1,7 +1,7 @@
 {
   "projeto": "Fenix GastroCore",
   "etapa": "Sprint 1 - Silver Data Quality V2 - Quality Controls",
-  "gerado_em_utc": "2026-11-27T15:40:44.314266+00:00",
+  "gerado_em_utc": "2026-11-27T20:47:24.164306+00:00",
   "integridade_bronze": {
     "manifesto": "manifesto_integridade_bronze.csv",
     "metodo": "SHA-256",
