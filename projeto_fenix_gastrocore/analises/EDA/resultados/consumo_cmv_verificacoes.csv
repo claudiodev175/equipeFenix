@@ -1,0 +1,7 @@
+﻿verificacao,registros_verificados,divergencias,maior_diferenca,tolerancia
+qtd_prevista_kg: valores negativos,20,0,,0.0
+qtd_real_kg: valores negativos,20,0,,0.0
+cmv_orcado_reais: valores negativos,20,0,,0.0
+cmv_realizado_reais: valores negativos,20,0,,0.0
+desvio_cmv_reais: valores negativos,20,0,,0.0
+CMV realizado - CMV orçado = desvio,20,0,0.0,0.01

@@ -1,0 +1,3 @@
+﻿verificacao,registros_verificados,divergencias,maior_diferenca,tolerancia
+Solicitada = entregue + pendente,18,0,0.0,0.01
+Quantidade solicitada x valor unitário = valor total estimado,18,0,0.0,0.02

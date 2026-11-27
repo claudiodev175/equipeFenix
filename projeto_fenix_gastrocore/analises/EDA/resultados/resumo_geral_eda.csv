@@ -1,0 +1,6 @@
+﻿base,arquivo,registros,colunas,valores_ausentes,linhas_duplicadas
+consumo_cmv,gastrocore_consumo_cmv_silver.csv,20,17,0,0
+desperdicio,gastrocore_desperdicio_rdc216_silver.csv,30,16,0,0
+filiais,gastrocore_filiais_pe_silver.csv,5,11,0,0
+processamento_proteinas,gastrocore_processamento_proteinas_silver.csv,18,17,0,0
+requisicoes_compras,gastrocore_requisicoes_compras_silver.csv,18,13,0,0

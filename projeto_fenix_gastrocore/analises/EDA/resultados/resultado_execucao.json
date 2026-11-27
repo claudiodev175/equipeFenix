@@ -1,0 +1,154 @@
+[
+  {
+    "key": "consumo_cmv",
+    "arquivo": "gastrocore_consumo_cmv_silver.csv",
+    "registros": 20,
+    "colunas": 17,
+    "ausentes": 0,
+    "duplicadas": 0,
+    "verificacoes": [
+      {
+        "verificacao": "qtd_prevista_kg: valores negativos",
+        "registros_verificados": 20,
+        "divergencias": 0,
+        "maior_diferenca": null,
+        "tolerancia": 0
+      },
+      {
+        "verificacao": "qtd_real_kg: valores negativos",
+        "registros_verificados": 20,
+        "divergencias": 0,
+        "maior_diferenca": null,
+        "tolerancia": 0
+      },
+      {
+        "verificacao": "cmv_orcado_reais: valores negativos",
+        "registros_verificados": 20,
+        "divergencias": 0,
+        "maior_diferenca": null,
+        "tolerancia": 0
+      },
+      {
+        "verificacao": "cmv_realizado_reais: valores negativos",
+        "registros_verificados": 20,
+        "divergencias": 0,
+        "maior_diferenca": null,
+        "tolerancia": 0
+      },
+      {
+        "verificacao": "desvio_cmv_reais: valores negativos",
+        "registros_verificados": 20,
+        "divergencias": 0,
+        "maior_diferenca": null,
+        "tolerancia": 0
+      },
+      {
+        "verificacao": "CMV realizado - CMV orçado = desvio",
+        "registros_verificados": 20,
+        "divergencias": 0,
+        "maior_diferenca": 0.0,
+        "tolerancia": 0.01
+      }
+    ],
+    "relatorio": "C:\\Users\\welli\\equipeFenix\\equipeFenix\\projeto_fenix_gastrocore\\analises\\EDA\\relatorios\\EDA_consumo_cmv.md"
+  },
+  {
+    "key": "desperdicio",
+    "arquivo": "gastrocore_desperdicio_rdc216_silver.csv",
+    "registros": 30,
+    "colunas": 16,
+    "ausentes": 0,
+    "duplicadas": 0,
+    "verificacoes": [
+      {
+        "verificacao": "Temperatura igual a zero (investigar significado)",
+        "registros_verificados": 30,
+        "divergencias": 13,
+        "maior_diferenca": null,
+        "tolerancia": null
+      },
+      {
+        "verificacao": "Temperatura positiva inferior a 60°C (investigar regra aplicável)",
+        "registros_verificados": 30,
+        "divergencias": 4,
+        "maior_diferenca": null,
+        "tolerancia": null
+      },
+      {
+        "verificacao": "Registros marcados com indicador de temperatura zero",
+        "registros_verificados": 30,
+        "divergencias": 13,
+        "maior_diferenca": null,
+        "tolerancia": null
+      }
+    ],
+    "relatorio": "C:\\Users\\welli\\equipeFenix\\equipeFenix\\projeto_fenix_gastrocore\\analises\\EDA\\relatorios\\EDA_desperdicio.md"
+  },
+  {
+    "key": "filiais",
+    "arquivo": "gastrocore_filiais_pe_silver.csv",
+    "registros": 5,
+    "colunas": 11,
+    "ausentes": 0,
+    "duplicadas": 0,
+    "verificacoes": [],
+    "relatorio": "C:\\Users\\welli\\equipeFenix\\equipeFenix\\projeto_fenix_gastrocore\\analises\\EDA\\relatorios\\EDA_filiais.md"
+  },
+  {
+    "key": "processamento_proteinas",
+    "arquivo": "gastrocore_processamento_proteinas_silver.csv",
+    "registros": 18,
+    "colunas": 17,
+    "ausentes": 0,
+    "duplicadas": 0,
+    "verificacoes": [
+      {
+        "verificacao": "Peso bruto - peso limpo = perda total",
+        "registros_verificados": 18,
+        "divergencias": 0,
+        "maior_diferenca": 0.0,
+        "tolerancia": 0.01
+      },
+      {
+        "verificacao": "Pós-descongelamento - aparas - rejeitos = peso limpo",
+        "registros_verificados": 18,
+        "divergencias": 0,
+        "maior_diferenca": 0.0,
+        "tolerancia": 0.01
+      },
+      {
+        "verificacao": "Percentual de perda recalculado (tolerância 0,01 p.p.)",
+        "registros_verificados": 18,
+        "divergencias": 0,
+        "maior_diferenca": 0.004444,
+        "tolerancia": 0.01
+      }
+    ],
+    "relatorio": "C:\\Users\\welli\\equipeFenix\\equipeFenix\\projeto_fenix_gastrocore\\analises\\EDA\\relatorios\\EDA_processamento_proteinas.md"
+  },
+  {
+    "key": "requisicoes_compras",
+    "arquivo": "gastrocore_requisicoes_compras_silver.csv",
+    "registros": 18,
+    "colunas": 13,
+    "ausentes": 0,
+    "duplicadas": 0,
+    "verificacoes": [
+      {
+        "verificacao": "Solicitada = entregue + pendente",
+        "registros_verificados": 18,
+        "divergencias": 0,
+        "maior_diferenca": 0.0,
+        "tolerancia": 0.01
+      },
+      {
+        "verificacao": "Quantidade solicitada x valor unitário = valor total estimado",
+        "registros_verificados": 18,
+        "divergencias": 0,
+        "maior_diferenca": 0.0,
+        "tolerancia": 0.02
+      }
+    ],
+    "relatorio": "C:\\Users\\welli\\equipeFenix\\equipeFenix\\projeto_fenix_gastrocore\\analises\\EDA\\relatorios\\EDA_requisicoes_compras.md"
+  }
+]

@@ -1,0 +1,4 @@
+﻿verificacao,registros_verificados,divergencias,maior_diferenca,tolerancia
+Peso bruto - peso limpo = perda total,18,0,0.0,0.01
+Pós-descongelamento - aparas - rejeitos = peso limpo,18,0,0.0,0.01
+"Percentual de perda recalculado (tolerância 0,01 p.p.)",18,0,0.004444,0.01

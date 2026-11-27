@@ -1,0 +1,4 @@
+﻿verificacao,registros_verificados,divergencias,maior_diferenca,tolerancia
+Temperatura igual a zero (investigar significado),30,13,,
+Temperatura positiva inferior a 60°C (investigar regra aplicável),30,4,,
+Registros marcados com indicador de temperatura zero,30,13,,
