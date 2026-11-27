@@ -1,0 +1,6 @@
+﻿id_filial,codigo_unidade,nome_unidade,regiao,cidade,uf,tipo_operacao,capacidade_refeicoes_dia,meta_cmv_percentual,responsavel_tecnica,status_operacional
+1,FIL-REC-01,Cozinha Central Recife Antigo,Metropolitana do Recife,Recife,PE,Cozinha Central (Produção & Distribuição),4500,32.5,Dra. Mariana Albuquerque (CRN-6 4521),Ativa
+2,FIL-SUA-02,Cozinha Satélite Complexo Suape,Litoral Sul,Ipojuca,PE,Cozinha Satélite (Termofinalização),3200,34.0,Dra. Camila Cavalcanti (CRN-6 7812),Ativa
+3,FIL-CAR-03,Unidade Polo Caruaru,Agreste Central,Caruaru,PE,Produção Local Mista,2800,33.0,Dr. Rodrigo Bezerra (CRN-6 9340),Ativa
+4,FIL-PET-04,Unidade Vale Petrolina,Sertão do São Francisco,Petrolina,PE,Produção Local Hospitalar/Corporativa,2100,35.0,Dra. Larissa Vasconcelos (CRN-6 6129),Ativa
+5,FIL-VIT-05,Refeitório Industrial Vitória,Zona da Mata,Vitória de Santo Antão,PE,Refeitório Satélite (Regeneração),1400,33.5,Dra. Juliana Mendes (CRN-6 8841),Ativa

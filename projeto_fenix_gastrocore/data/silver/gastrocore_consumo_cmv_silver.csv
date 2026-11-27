@@ -1,0 +1,21 @@
+﻿id_consumo,data_competencia,id_filial,nome_filial,categoria_insumo,nome_insumo,qtd_prevista_kg,qtd_real_kg,custo_unitario_kg,cmv_orcado_reais,cmv_realizado_reais,desvio_cmv_reais,desvio_cmv_percentual,classificacao_abc,fator_correcao_teorico,fator_correcao_real,motivo_desvio
+1,2026-03-01,1,Cozinha Central Recife Antigo,Proteina Bovina,Acem Bovina em Cubos,340.0,378.5,34.5,11730.0,13058.25,1328.25,11.32,Curva A,1.25,1.39,Lote com teor de gordura e aponeurose superior a ficha
+2,2026-03-01,1,Cozinha Central Recife Antigo,Proteina Ave,Peito de Frango Sem Osso,420.0,432.0,19.8,8316.0,8553.6,237.6,2.86,Curva A,1.1,1.13,Variacao dentro da margem de tolerancia operacional
+3,2026-03-01,1,Cozinha Central Recife Antigo,Graos e Cereais,Arroz Parboilizado Tipo 1,180.0,185.0,6.2,1116.0,1147.0,31.0,2.78,Curva B,1.0,1.02,Rendimento estavel no cozimento a vapor
+4,2026-03-01,1,Cozinha Central Recife Antigo,Graos e Cereais,Feijao Carioca Selecionado,95.0,98.0,8.4,798.0,823.2,25.2,3.16,Curva B,1.0,1.03,Tempo de remolho adequado
+5,2026-03-01,1,Cozinha Central Recife Antigo,Hortifruti,Batata Inglesa Lisa,210.0,248.0,7.1,1491.0,1760.8,269.8,18.09,Curva B,1.2,1.41,Tubérculos de calibre irregular geraram perda no descasque
+6,2026-03-01,1,Cozinha Central Recife Antigo,Hortifruti,Tomate Longa Vida,85.0,96.0,8.9,756.5,854.4,97.9,12.94,Curva C,1.15,1.3,Maturacao avancada com necessidade de descarte parcial
+7,2026-03-01,2,Cozinha Satelite Complexo Suape,Proteina Bovina,Acem Bovina em Cubos,210.0,235.0,34.5,7245.0,8107.5,862.5,11.9,Curva A,1.25,1.4,Perda termica e rediluição em caldeira satelite
+8,2026-03-01,2,Cozinha Satelite Complexo Suape,Proteina Ave,Coxa e Sobrecoxa Desossada,280.0,295.0,16.5,4620.0,4867.5,247.5,5.36,Curva A,1.18,1.24,Descongelamento com perda de exsudato
+9,2026-03-01,3,Unidade Polo Caruaru,Proteina Caprina/Bovina,Carne de Sol de Primeira,190.0,196.0,42.0,7980.0,8232.0,252.0,3.16,Curva A,1.15,1.18,Fornecedor regional de Caruaru com excelente padrao
+10,2026-03-01,3,Unidade Polo Caruaru,Hortifruti,Mandioca Manteiga Macaxeira,160.0,174.0,5.8,928.0,1009.2,81.2,8.75,Curva B,1.3,1.41,Perda de casca mais espessa na safra local
+11,2026-03-01,4,Unidade Vale Petrolina,Proteina Peixe,File de Tilapia Fresco,180.0,192.0,38.0,6840.0,7296.0,456.0,6.67,Curva A,1.08,1.15,Produtor do Vale do Sao Francisco com bom frescor
+12,2026-03-01,4,Unidade Vale Petrolina,Hortifruti,Manga Tommy em Cubos (Salada),70.0,72.0,6.5,455.0,468.0,13.0,2.86,Curva C,1.35,1.38,Fruta regional do Vale com alto aproveitamento
+13,2026-03-02,1,Cozinha Central Recife Antigo,Proteina Suina,Lombo Suino Fatiado,310.0,324.0,24.0,7440.0,7776.0,336.0,4.52,Curva A,1.12,1.17,Corte padronizado com perda sob controle
+14,2026-03-02,1,Cozinha Central Recife Antigo,Proteina Bovina,Alcatra Fatiada p/ Bife,360.0,398.0,44.0,15840.0,17512.0,1672.0,10.56,Curva A,1.18,1.3,Espessura de corte manual acima da ficha tecnica
+15,2026-03-02,2,Cozinha Satelite Complexo Suape,Proteina Suina,Lombo Suino Fatiado,195.0,208.0,24.0,4680.0,4992.0,312.0,6.67,Curva A,1.12,1.19,Porcionamento com leve variacao de gramatura
+16,2026-03-03,1,Cozinha Central Recife Antigo,Hortifruti,Cenoura Tipo Extra,130.0,152.0,6.4,832.0,972.8,140.8,16.92,Curva B,1.18,1.38,Calibre fino gerou maior perda de casca em descascador
+17,2026-03-03,1,Cozinha Central Recife Antigo,Laticinios,Queijo Coalho em Cubos,90.0,91.5,41.0,3690.0,3751.5,61.5,1.67,Curva A,1.02,1.03,Insumo nobre fracionado sob supervisao direta de nutricionista
+18,2026-03-04,1,Cozinha Central Recife Antigo,Proteina Bovina,Carne Moida Patinho,290.0,305.0,36.0,10440.0,10980.0,540.0,5.17,Curva A,1.15,1.21,Umidade ligeiramente elevada na embalagem a vacuo
+19,2026-03-04,2,Cozinha Satelite Complexo Suape,Proteina Bovina,Carne Moida Patinho,175.0,188.0,36.0,6300.0,6768.0,468.0,7.43,Curva A,1.15,1.23,Aquecimento prolongado gerou reducao de volume
+20,2026-03-04,3,Unidade Polo Caruaru,Hortifruti,Abobora Jacarezinho,110.0,132.0,4.8,528.0,633.6,105.6,20.0,Curva C,1.35,1.62,Casca excessivamente rigida e sementes grandes

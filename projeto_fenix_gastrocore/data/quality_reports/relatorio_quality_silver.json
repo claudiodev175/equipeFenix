@@ -1,0 +1,340 @@
+{
+  "projeto": "Fenix GastroCore",
+  "etapa": "Sprint 1 - Silver Data Quality V2 - Quality Controls",
+  "gerado_em_utc": "2026-11-27T13:12:47.575705+00:00",
+  "integridade_bronze": {
+    "manifesto": "C:\\Users\\welli\\Documents\\APONT SOFTEX\\projeto_fenix_gastrocore\\Dados_projeto_fenix\\data\\quality_reports\\manifesto_integridade_bronze.csv",
+    "metodo": "SHA-256",
+    "arquivos_verificados": 5,
+    "arquivos_integros": 5,
+    "status": "APROVADO",
+    "sha256_pacote_zip_registrado": "B2F97C0BA4B8B59D84BE2C414DC88D9C46E9053061CB08A5021088EC126D3484",
+    "detalhes": [
+      {
+        "arquivo": "gastrocore_consumo_cmv.csv",
+        "sha256_manifesto": "EBF9AF445B3158E1D1092323FD3DFEE3F37D6104092911504CAC4EE738B276A2",
+        "sha256_atual": "EBF9AF445B3158E1D1092323FD3DFEE3F37D6104092911504CAC4EE738B276A2",
+        "status": "INTEGRO"
+      },
+      {
+        "arquivo": "gastrocore_desperdicio_rdc216.csv",
+        "sha256_manifesto": "918D77F36A87A894F6BC5C9B92E9A157D4FA2B1A2752A2519BB214E922E0C92E",
+        "sha256_atual": "918D77F36A87A894F6BC5C9B92E9A157D4FA2B1A2752A2519BB214E922E0C92E",
+        "status": "INTEGRO"
+      },
+      {
+        "arquivo": "gastrocore_filiais_pe.csv",
+        "sha256_manifesto": "523FFBCD04B74BB2825345664DD9F59726D35F8DE670EF10C9AFBC25DE409BA5",
+        "sha256_atual": "523FFBCD04B74BB2825345664DD9F59726D35F8DE670EF10C9AFBC25DE409BA5",
+        "status": "INTEGRO"
+      },
+      {
+        "arquivo": "gastrocore_processamento_proteinas.csv",
+        "sha256_manifesto": "2BCBFED1E1AC861AD97A932A9183C962AF0CF1289A38FCE0E0F8E7C0029C21DA",
+        "sha256_atual": "2BCBFED1E1AC861AD97A932A9183C962AF0CF1289A38FCE0E0F8E7C0029C21DA",
+        "status": "INTEGRO"
+      },
+      {
+        "arquivo": "gastrocore_requisicoes_compras.csv",
+        "sha256_manifesto": "ADEF166387E0179A043D85623EF93D323C9DDE97D5BAE8DB39A0B21CB5A458A7",
+        "sha256_atual": "ADEF166387E0179A043D85623EF93D323C9DDE97D5BAE8DB39A0B21CB5A458A7",
+        "status": "INTEGRO"
+      }
+    ]
+  },
+  "arquivos_processados": 5,
+  "arquivos_ausentes": [],
+  "resultados": [
+    {
+      "arquivo_origem": "gastrocore_consumo_cmv.csv",
+      "arquivo_silver": "gastrocore_consumo_cmv_silver.csv",
+      "linhas_origem": 20,
+      "linhas_silver": 20,
+      "colunas": 17,
+      "colunas_originais": [
+        "id_consumo",
+        "data_competencia",
+        "id_filial",
+        "nome_filial",
+        "categoria_insumo",
+        "nome_insumo",
+        "qtd_prevista_kg",
+        "qtd_real_kg",
+        "custo_unitario_kg",
+        "cmv_orcado_reais",
+        "cmv_realizado_reais",
+        "desvio_cmv_reais",
+        "desvio_cmv_percentual",
+        "classificacao_abc",
+        "fator_correcao_teorico",
+        "fator_correcao_real",
+        "motivo_desvio"
+      ],
+      "colunas_padronizadas": [
+        "id_consumo",
+        "data_competencia",
+        "id_filial",
+        "nome_filial",
+        "categoria_insumo",
+        "nome_insumo",
+        "qtd_prevista_kg",
+        "qtd_real_kg",
+        "custo_unitario_kg",
+        "cmv_orcado_reais",
+        "cmv_realizado_reais",
+        "desvio_cmv_reais",
+        "desvio_cmv_percentual",
+        "classificacao_abc",
+        "fator_correcao_teorico",
+        "fator_correcao_real",
+        "motivo_desvio"
+      ],
+      "duplicatas_exatas_removidas": 0,
+      "conflitos_chave_mantidos_para_revisao": {},
+      "erros_de_conversao": {},
+      "valores_ausentes_por_coluna": {},
+      "regras": {
+        "fator_correcao_real_GE_1": {
+          "invalid_rows": 0,
+          "rule": "fator_correcao_real >= 1"
+        },
+        "fator_correcao_teorico_GE_1": {
+          "invalid_rows": 0,
+          "rule": "fator_correcao_teorico >= 1"
+        },
+        "CMV_ORCADO_ARITMETICAMENTE_COMPATIVEL": {
+          "invalid_rows": 0,
+          "rule": "qtd_prevista_kg * custo_unitario_kg = cmv_orcado_reais (tolerância R$ 0,01)"
+        },
+        "CMV_REALIZADO_ARITMETICAMENTE_COMPATIVEL": {
+          "invalid_rows": 0,
+          "rule": "qtd_real_kg * custo_unitario_kg = cmv_realizado_reais (tolerância R$ 0,01)"
+        },
+        "DESVIO_CMV_ARITMETICAMENTE_COMPATIVEL": {
+          "invalid_rows": 0,
+          "rule": "cmv_realizado_reais - cmv_orcado_reais = desvio_cmv_reais (tolerância R$ 0,01)"
+        },
+        "PERCENTUAL_DESVIO_CMV_COMPATIVEL": {
+          "invalid_rows": 0,
+          "rule": "desvio_cmv_reais / cmv_orcado_reais * 100 = desvio_cmv_percentual (tolerância 0,01 ponto percentual)"
+        }
+      },
+      "observacao": "Registros com conflitos de chave ou violações de regra foram mantidos para revisão; somente duplicatas integralmente idênticas foram removidas."
+    },
+    {
+      "arquivo_origem": "gastrocore_desperdicio_rdc216.csv",
+      "arquivo_silver": "gastrocore_desperdicio_rdc216_silver.csv",
+      "linhas_origem": 30,
+      "linhas_silver": 30,
+      "colunas": 16,
+      "colunas_originais": [
+        "id_registro",
+        "data_registro",
+        "id_filial",
+        "nome_filial",
+        "turno",
+        "tipo_descarte",
+        "peso_kg",
+        "custo_estimado_reais",
+        "refeicoes_produzidas_pax",
+        "resto_ingesta_por_pax_gramas",
+        "temp_afericao_celsius",
+        "status_sanitario",
+        "motivo_declarado"
+      ],
+      "colunas_padronizadas": [
+        "id_registro",
+        "data_registro",
+        "id_filial",
+        "nome_filial",
+        "turno",
+        "tipo_descarte",
+        "peso_kg",
+        "custo_estimado_reais",
+        "refeicoes_produzidas_pax",
+        "resto_ingesta_por_pax_gramas",
+        "temp_afericao_celsius",
+        "status_sanitario",
+        "motivo_declarado",
+        "indicador_temperatura_zero",
+        "indicador_temperatura_abaixo_60",
+        "status_validacao_temperatura"
+      ],
+      "duplicatas_exatas_removidas": 0,
+      "conflitos_chave_mantidos_para_revisao": {},
+      "erros_de_conversao": {},
+      "valores_ausentes_por_coluna": {},
+      "regras": {
+        "TEMPERATURA_ZERO_PENDENTE_INTERPRETACAO": {
+          "ocorrencias": 13,
+          "regra": "temperatura igual a zero é sinalizada; valor original preservado; não inferir ausência de aferição"
+        },
+        "SOBRA_LIMPA_ABAIXO_60C": {
+          "ocorrencias": 2,
+          "regra": "temperatura abaixo de 60 °C em Sobra Limpa (Nao Distribuida); indicador exploratório para revisão"
+        }
+      },
+      "observacao": "Registros com conflitos de chave ou violações de regra foram mantidos para revisão; somente duplicatas integralmente idênticas foram removidas."
+    },
+    {
+      "arquivo_origem": "gastrocore_filiais_pe.csv",
+      "arquivo_silver": "gastrocore_filiais_pe_silver.csv",
+      "linhas_origem": 5,
+      "linhas_silver": 5,
+      "colunas": 11,
+      "colunas_originais": [
+        "id_filial",
+        "codigo_unidade",
+        "nome_unidade",
+        "regiao",
+        "cidade",
+        "uf",
+        "tipo_operacao",
+        "capacidade_refeicoes_dia",
+        "meta_cmv_percentual",
+        "responsavel_tecnica",
+        "status_operacional"
+      ],
+      "colunas_padronizadas": [
+        "id_filial",
+        "codigo_unidade",
+        "nome_unidade",
+        "regiao",
+        "cidade",
+        "uf",
+        "tipo_operacao",
+        "capacidade_refeicoes_dia",
+        "meta_cmv_percentual",
+        "responsavel_tecnica",
+        "status_operacional"
+      ],
+      "duplicatas_exatas_removidas": 0,
+      "conflitos_chave_mantidos_para_revisao": {},
+      "erros_de_conversao": {},
+      "valores_ausentes_por_coluna": {},
+      "regras": {},
+      "observacao": "Registros com conflitos de chave ou violações de regra foram mantidos para revisão; somente duplicatas integralmente idênticas foram removidas."
+    },
+    {
+      "arquivo_origem": "gastrocore_processamento_proteinas.csv",
+      "arquivo_silver": "gastrocore_processamento_proteinas_silver.csv",
+      "linhas_origem": 18,
+      "linhas_silver": 18,
+      "colunas": 17,
+      "colunas_originais": [
+        "data_processamento",
+        "unidade_codigo",
+        "turno",
+        "tipo_proteina",
+        "nome_proteina",
+        "peso_bruto_kg",
+        "peso_pos_descong_kg",
+        "apara_kg",
+        "rejeito_kg",
+        "peso_limpo_kg",
+        "perda_total_kg",
+        "perda_pct",
+        "fator_correcao_real",
+        "limite_perda_pct",
+        "status_perda"
+      ],
+      "colunas_padronizadas": [
+        "data_processamento",
+        "unidade_codigo",
+        "turno",
+        "tipo_proteina",
+        "nome_proteina",
+        "peso_bruto_kg",
+        "peso_pos_descong_kg",
+        "apara_kg",
+        "rejeito_kg",
+        "peso_limpo_kg",
+        "perda_total_kg",
+        "perda_pct",
+        "fator_correcao_real",
+        "limite_perda_pct",
+        "status_perda",
+        "comparacao_limite_perda",
+        "diferenca_limite_perda_pp"
+      ],
+      "duplicatas_exatas_removidas": 0,
+      "conflitos_chave_mantidos_para_revisao": {},
+      "erros_de_conversao": {},
+      "valores_ausentes_por_coluna": {},
+      "regras": {
+        "PB_GE_PL": {
+          "invalid_rows": 0,
+          "rule": "peso_bruto_kg >= peso_limpo_kg"
+        },
+        "fator_correcao_real_GE_1": {
+          "invalid_rows": 0,
+          "rule": "fator_correcao_real >= 1"
+        },
+        "FC_REAL_COMPATIVEL_COM_PB_PL": {
+          "invalid_rows": 0,
+          "rule": "fator_correcao_real aproximadamente igual a peso_bruto_kg / peso_limpo_kg (tolerância 0,02)"
+        },
+        "PERDA_PCT_COMPARADA_AO_LIMITE": {
+          "acima_do_limite": 8,
+          "abaixo_do_limite": 8,
+          "no_limite": 2,
+          "regra": "comparação descritiva de perda_pct com limite_perda_pct; não altera status_perda original"
+        }
+      },
+      "observacao": "Registros com conflitos de chave ou violações de regra foram mantidos para revisão; somente duplicatas integralmente idênticas foram removidas."
+    },
+    {
+      "arquivo_origem": "gastrocore_requisicoes_compras.csv",
+      "arquivo_silver": "gastrocore_requisicoes_compras_silver.csv",
+      "linhas_origem": 18,
+      "linhas_silver": 18,
+      "colunas": 13,
+      "colunas_originais": [
+        "tipo_movimento",
+        "data_solicitacao",
+        "unidade_codigo",
+        "turno",
+        "categoria_item",
+        "nome_item",
+        "unidade_medida",
+        "saldo_estoque",
+        "qtd_solicitada",
+        "qtd_entregue",
+        "qtd_pendente",
+        "valor_unit_estimado",
+        "valor_total_estimado"
+      ],
+      "colunas_padronizadas": [
+        "tipo_movimento",
+        "data_solicitacao",
+        "unidade_codigo",
+        "turno",
+        "categoria_item",
+        "nome_item",
+        "unidade_medida",
+        "saldo_estoque",
+        "qtd_solicitada",
+        "qtd_entregue",
+        "qtd_pendente",
+        "valor_unit_estimado",
+        "valor_total_estimado"
+      ],
+      "duplicatas_exatas_removidas": 0,
+      "conflitos_chave_mantidos_para_revisao": {},
+      "erros_de_conversao": {},
+      "valores_ausentes_por_coluna": {},
+      "regras": {
+        "QTD_SOLICITADA_EQ_ENTREGUE_MAIS_PENDENTE": {
+          "invalid_rows": 0,
+          "rule": "qtd_solicitada = qtd_entregue + qtd_pendente"
+        },
+        "VALOR_TOTAL_COMPRA_COMPATIVEL": {
+          "invalid_rows": 0,
+          "rule": "qtd_solicitada * valor_unit_estimado = valor_total_estimado (tolerância R$ 0,01)"
+        }
+      },
+      "observacao": "Registros com conflitos de chave ou violações de regra foram mantidos para revisão; somente duplicatas integralmente idênticas foram removidas."
+    }
+  ],
+  "politica": "A validação SHA-256 do manifesto é obrigatória e ocorre antes da transformação. Preservar Bronze; não imputar valores ausentes; não corrigir valores suspeitos sem regra de negócio aprovada; conflitos de chave são sinalizados."
+}
