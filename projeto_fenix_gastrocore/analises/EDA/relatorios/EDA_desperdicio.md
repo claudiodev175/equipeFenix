@@ -45,13 +45,17 @@ _Sem registros para apresentar._
 | Registros marcados com indicador de temperatura zero              |                      30 |             13 |                   |              |
 
 ## 6. Gráficos
-![desperdicio_custo_estimado_reais_hist](../graficos/desperdicio_custo_estimado_reais_hist.png)
 
-![desperdicio_id_filial_hist](../graficos/desperdicio_id_filial_hist.png)
+### Ocorrências por tipo de descarte
+![Ocorrências por tipo de descarte](../graficos/desperdicio_01_ocorrencias_por_tipo.png)
 
-![desperdicio_id_registro_hist](../graficos/desperdicio_id_registro_hist.png)
+### Custo estimado por tipo de descarte
+![Custo por tipo de descarte](../graficos/desperdicio_02_custo_por_tipo.png)
 
-![desperdicio_peso_kg_hist](../graficos/desperdicio_peso_kg_hist.png)
+### Temperatura por tipo de registro
+![Temperatura por tipo de registro](../graficos/desperdicio_03_temperatura_por_tipo.png)
+
+**Nota de interpretação:** valores iguais a zero estão identificados como pendentes de interpretação; registros de pré-preparo possuem temperatura não aplicável. A referência de 60 °C é contextual e não constitui classificação automática de irregularidade para todos os tipos de descarte. A regra aplicável deve ser confirmada pelo CESIC.
 
 ## 7. Interpretação e limitações
 - Estatísticas e frequências descrevem somente os registros disponíveis nesta base.

@@ -261,8 +261,9 @@ def analyze_dataset(key, filename):
     if not checks_df.empty:
         checks_df.to_csv(RESULT_DIR / f"{key}_verificacoes.csv", index=False, encoding="utf-8-sig")
 
-    save_numeric_histograms(df, key)
-    save_top_category_chart(df, key)
+    if key != "desperdicio":
+        save_numeric_histograms(df, key)
+        save_top_category_chart(df, key)
 
     # Correlações apenas para variáveis numéricas; associação não implica causalidade.
     corr_path = RESULT_DIR / f"{key}_correlacoes.csv"
